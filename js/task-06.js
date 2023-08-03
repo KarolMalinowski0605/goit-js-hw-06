@@ -12,3 +12,4 @@ const validationInput = document.querySelector('#validation-input');
                 validationInput.classList.add('invalid');
             }
         });
+        console.log(validationInput);
