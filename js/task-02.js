@@ -17,7 +17,6 @@ for(let i = 0; i < ingredients.length; i += 1){
   newElementLi.textContent = ingredients[i];
   newElementLi.classList.add('item');
 
-  
   elementsArray.push(newElementLi);
 
 }

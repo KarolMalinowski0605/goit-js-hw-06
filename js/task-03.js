@@ -14,26 +14,40 @@ const images = [
 ];
 
 
-function createGallery(){
-  const galleryList = document.querySelector('.gallery');
-  let galleryHtml = '';
+function createGallery (){
+  const galleryList = document.querySelector('.gallery')
 
-  for( let i = 0; i < images.length; i += 1){
-
-    const url = images[i].url;
-    const alt = images[i].alt;
-    const imagesHtml = `
+  const galleryHtmlArray = images.map(image => `
     <li class="gallery-img" >
-        <img src='${url}' alt='${alt}' height=150px weight=150px/>
+        <img src='${image.url}' alt='${image.alt}' height=150px width=150px/>
     </li>`
-      //  galleryList.firstChild.classList.add('gallery-img');
-        galleryHtml += imagesHtml;
+  );
+  const galleryHtml = galleryHtmlArray.join('');
+  galleryList.insertAdjacentHTML('beforeend',galleryHtml)
+}
+createGallery();
+
+
+// function createGallery(){
+//   const galleryList = document.querySelector('.gallery');
+//   let galleryHtml = '';
+
+//   for( let i = 0; i < images.length; i += 1){
+
+//     const url = images[i].url;
+//     const alt = images[i].alt;
+//     const imagesHtml = `
+//     <li class="gallery-img" >
+//         <img src='${url}' alt='${alt}' height=150px weight=150px/>
+//     </li>`
+     
+//         galleryHtml += imagesHtml;
       
 
-        }
-  galleryList.insertAdjacentHTML('beforeend', galleryHtml);
+//         }
+//   galleryList.insertAdjacentHTML('beforeend', galleryHtml);
  
 
-}
-// console.log(createGallery());
-createGallery();
+// }
+
+// createGallery();
